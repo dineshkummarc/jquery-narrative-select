@@ -22,6 +22,7 @@
       * Apply interaction to all the matching elements
       **/
      this.each(function() {
+       if (this.nodeName != "SELECT") return;
        if ($(this).attr("multiple")) return;
        if ($(this).is(":visible")) _apply_narrative_skin($(this));
      });          
@@ -50,7 +51,7 @@
          var selected_index = select_elm.attr("selectedIndex");
          // optgroup construction          
          if (select_elm.find("optgroup").length > 0) {
-           total_index = 0
+           var total_index = 0
            select_elm.find("optgroup").each(function(i,opt_elm){
              opt_elm = $(opt_elm);
              html += "<ul><span class='label'>" + opt_elm.attr("label") + "</span>";
@@ -65,8 +66,9 @@
          // standard construction
          else {
            select_elm.find("option").each(function(i,elm){
-             current = (i == selected_index) ? "current" : "";
-             html += "<li index='"+i+"' class='"+current+"'>" + $(elm).attr("text") + "</li>\n";
+             var disabled_class = $(elm).attr("disabled") ? " disabled" : "";
+             var current = (i == selected_index) ? "current" : "";
+             html += "<li index='"+i+"' class='"+current+disabled_class+"'>" + $(elm).attr("text") + "</li>\n";
            });           
            html = $("<ul>" + html + "</ul>");           
          }         
@@ -74,8 +76,10 @@
 
          // Add click interactions
          narrative_tooltip.find("li").bind("click", function() {
-           select_elm.attr("selectedIndex", $(this).attr("index"));
-           select_elm.trigger("change");
+           if (!$(this).hasClass('disabled')) {
+             select_elm.attr("selectedIndex", $(this).attr("index"));
+             select_elm.trigger("change");             
+           }
          });         
          //  position the tooltip
          var tooltip_position = { left : 0, top : 0};
