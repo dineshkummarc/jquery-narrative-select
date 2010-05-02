@@ -5,10 +5,12 @@
   <head>
     <style type="text/css">
       * { font-family: "trebuchet ms"; color: black; }
-      div#wrapper { width: 800px; margin: 0 auto; padding-top: 0px; }
+      div#wrapper { width: 900px; margin: 0 auto; padding-top: 0px; }
       span.subtext { font-size: small; color: #E7530D;}
       li { margin-bottom: 5px;}
-      
+      pre { background: black; color: white; font-family: monaco, courier; padding: 10px;}
+      h3 { color:#414141; border-bottom: 1px dotted #ccc; }
+      h3.todo { color: maroon; }
     </style>
     <link rel="stylesheet" href="stylesheets/jquery.narrativeselect/jquery.narrativeselect.css" type="text/css" />
     <script type="text/javascript" src="javascripts/jquery.min.js"></script>
@@ -23,9 +25,13 @@
     </script>
   </head>
   <body>
+    <a href="http://github.com/gdakram/jquery-narrative-select"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>    
+    
     <div id="wrapper">
       <h1>JQuery Narrative Select Plugin <span class="subtext"><em>by</em> <a href="http://gdakram.com" target="_blank">gdakram</a></span></h1>
-      <h3>From:</h3>
+
+      <!-- From -->
+      <h3>From</h3>
         <ul>
           <li>
             If this is 
@@ -80,9 +86,9 @@
               <option value="7">7</option>
               <option value="8">8</option>
               <option value="9">9</option>
-              <option value="10">10</option>
+              <option value="10" selected="selected">10</option>
               <option value="11">11</option>
-              <option value="12" selected="selected">12</option>
+              <option value="12">12</option>
               <option value="13">13</option>
               <option value="14">14</option>
               <option value="15">15</option>
@@ -108,7 +114,9 @@
       <p>
                     
       </p>
-      <h3>To:</h3>
+      
+      <!-- To -->
+      <h3>To</h3>
       <p>
         <ul>
           <li>
@@ -164,9 +172,9 @@
               <option value="7">7</option>
               <option value="8">8</option>
               <option value="9">9</option>
-              <option value="10">10</option>
+              <option value="10" selected="selected">10</option>
               <option value="11">11</option>
-              <option value="12" selected="selected">12</option>
+              <option value="12">12</option>
               <option value="13">13</option>
               <option value="14">14</option>
               <option value="15">15</option>
@@ -188,8 +196,73 @@
               <option value="31">31</option>
             </select>
           </li>         
-        </ul>        
+        </ul>
       </p>
+      
+      <!-- Why, When -->
+      <h3>Why, When</h3>              
+      <p>
+        <ul>
+          <li>
+            Make your drop-down list look uniform cross-platform. 
+          </li>
+          <li>
+            Enables you to include a drop-down list as part of a 'narrative' form, where your user 
+            input fields look uniform.
+          </li>
+        </ul>
+      </p>
+
+      <!-- How -->
+      <h3>How</h3>
+      <p>
+        <pre>
+  <span style='color:orange'>&lt;!-- CSS --&gt;</span>
+  &lt;style type=&quot;text/css&quot;&gt;
+    @import url(&quot;/path/to/jquery.narrativeselect/jquery.narrativeselect.css&quot;);
+  &lt;/style&gt;    
+  <span style='color:orange'>&lt;!-- JS --&gt;</span>
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.latest.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.narrativeselect.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  <span style='color:gray'>//--&lt;![CDATA[</span>
+    $(&quot;select&quot;).narrativeselect();
+  <span style='color:gray'>//--]]&gt;</span>  
+  &lt;/script&gt;
+        </pre>
+      </p>
+      <h3 class='todo'>To Do (Current Limitations)</h3>
+      <p>
+        <ul>
+          <li>Doesn't work with "multiple='multiple'" select elements. Yet.</li>
+          <li>No key-stroke event handler for searching through option elements.</li>
+        </ul>
+      </p>
+      
+      <!-- License -->
+      <h3>License</h3>
+      <p><a href="http://github.com/gdakram/jquery-narrative-select/raw/master/LICENSE">MIT License</a></p>
+      
+      <!-- Author/Contact -->
+      <h3>Author/Contact</h3>
+      <p>Shahrier Akram (shahrier.akram@gmail.com)</p>
+      
+      <!-- Download -->      
+      <h3>Download</h3>
+      <p>
+        You can download this project in either
+        <a href="http://github.com/gdakram/jquery-narrative-select/zipball/master">zip</a> or
+        <a href="http://github.com/gdakram/jquery-narrative-select/tarball/master">tar</a> formats.
+      </p>
+      <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+        by running:
+        <pre>$ git clone git://github.com/gdakram/jquery-narrative-select.git</pre>
+      </p>
+
+      <p>
+        get the source code on GitHub : <a href="http://github.com/gdakram/jquery-narrative-select">gdakram/jquery-narrative-select</a>
+      </p>      
+      
     </div>
   </body>
 </html>
