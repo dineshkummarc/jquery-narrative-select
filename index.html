@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <style type="text/css">
+      * { font-family: "trebuchet ms"; color: black; }
+      div#wrapper { width: 900px; margin: 0 auto; padding-top: 0px; }
+      span.subtext { font-size: small; color: #E7530D;}
+      li { margin-bottom: 5px;}
+      pre { background: black; color: white; font-family: monaco, courier; padding: 10px;}
+      h3 { color:#414141; border-bottom: 1px dotted #ccc; }
+      h3.todo { color: maroon; }
+    </style>
+    <link rel="stylesheet" href="stylesheets/jquery.narrativeselect/jquery.narrativeselect.css" type="text/css" />
+    <script type="text/javascript" src="javascripts/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.narrativeselect.js"></script>
+    <script type="text/javascript">
+    //--<![CDATA
+      $j = jQuery.noConflict();
+      $j(document).ready(function(){
+        $j("select.narrative").narrativeselect();
+      });    
+    //--]]>
+    </script>
+  </head>
+  <body>
+    <a href="http://github.com/gdakram/jquery-narrative-select"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>    
+    
+    <div id="wrapper">
+      <h1>JQuery Narrative Select Plugin <span class="subtext"><em>by</em> <a href="http://gdakram.com" target="_blank">gdakram</a></span></h1>
+
+      <!-- From -->
+      <h3>From</h3>
+        <ul>
+          <li>
+            If this is 
+            <select>
+              <optgroup label="Boolean">
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </optgroup>
+            </select>,  
+            then you are 
+            <select>
+              <option value="correct">Correct</option>
+              <option value="incorrect">Incorrect</option>          
+            </select>.
+          </li>
+          <li>
+            Date: 
+            <select>
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010" selected="selected">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+            </select>
+            <select>
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10" selected="selected">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10" selected="selected">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>            
+          </li>
+        </ul>
+      <p>
+                    
+      </p>
+      
+      <!-- To -->
+      <h3>To</h3>
+      <p>
+        <ul>
+          <li>
+            If this is 
+            <select class="narrative">
+              <optgroup label="Boolean">
+                <option value="true">True</option>
+                <option value="false">False</option>
+              </optgroup>
+            </select>,  
+            then you are 
+            <select class="narrative">
+              <option value="correct">Correct</option>
+              <option value="incorrect">Incorrect</option>                
+            </select>.
+          </li>
+          <li>
+            Date: 
+            <select class="narrative">
+              <option value="2005">2005</option>
+              <option value="2006">2006</option>
+              <option value="2007">2007</option>
+              <option value="2008">2008</option>
+              <option value="2009">2009</option>
+              <option value="2010" selected="selected">2010</option>
+              <option value="2011">2011</option>
+              <option value="2012">2012</option>
+              <option value="2013">2013</option>
+              <option value="2014">2014</option>
+              <option value="2015">2015</option>
+            </select>
+            <select class="narrative">
+              <option value="1">January</option>
+              <option value="2">February</option>
+              <option value="3">March</option>
+              <option value="4">April</option>
+              <option value="5">May</option>
+              <option value="6">June</option>
+              <option value="7">July</option>
+              <option value="8">August</option>
+              <option value="9">September</option>
+              <option value="10" selected="selected">October</option>
+              <option value="11">November</option>
+              <option value="12">December</option>
+            </select>
+            <select class="narrative">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10" selected="selected">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
+              <option value="13">13</option>
+              <option value="14">14</option>
+              <option value="15">15</option>
+              <option value="16">16</option>
+              <option value="17">17</option>
+              <option value="18">18</option>
+              <option value="19">19</option>
+              <option value="20">20</option>
+              <option value="21">21</option>
+              <option value="22">22</option>
+              <option value="23">23</option>
+              <option value="24">24</option>
+              <option value="25">25</option>
+              <option value="26">26</option>
+              <option value="27">27</option>
+              <option value="28">28</option>
+              <option value="29">29</option>
+              <option value="30">30</option>
+              <option value="31">31</option>
+            </select>
+          </li>         
+        </ul>
+      </p>
+      
+      <!-- Why, When -->
+      <h3>Why, When</h3>              
+      <p>
+        <ul>
+          <li>
+            Make your drop-down list look uniform cross-platform. 
+          </li>
+          <li>
+            Enables you to include a drop-down list as part of a 'narrative' form, where your user 
+            input fields look uniform.
+          </li>
+        </ul>
+      </p>
+
+      <!-- How -->
+      <h3>How</h3>
+      <p>
+        <pre>
+  <span style='color:orange'>&lt;!-- CSS --&gt;</span>
+  &lt;style type=&quot;text/css&quot;&gt;
+    @import url(&quot;/path/to/jquery.narrativeselect/jquery.narrativeselect.css&quot;);
+  &lt;/style&gt;    
+  <span style='color:orange'>&lt;!-- JS --&gt;</span>
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.latest.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.narrativeselect.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  <span style='color:gray'>//--&lt;![CDATA[</span>
+    $(&quot;select&quot;).narrativeselect();
+  <span style='color:gray'>//--]]&gt;</span>  
+  &lt;/script&gt;
+        </pre>
+      </p>
+      <h3 class='todo'>To Do (Current Limitations)</h3>
+      <p>
+        <ul>
+          <li>Doesn't work with "multiple='multiple'" select elements. Yet.</li>
+          <li>No key-stroke event handler for searching through option elements.</li>
+        </ul>
+      </p>
+      
+      <!-- License -->
+      <h3>License</h3>
+      <p><a href="http://github.com/gdakram/jquery-narrative-select/raw/master/LICENSE">MIT License</a></p>
+      
+      <!-- Author/Contact -->
+      <h3>Author/Contact</h3>
+      <p>Shahrier Akram (shahrier.akram@gmail.com)</p>
+      
+      <!-- Download -->      
+      <h3>Download</h3>
+      <p>
+        You can download this project in either
+        <a href="http://github.com/gdakram/jquery-narrative-select/zipball/master">zip</a> or
+        <a href="http://github.com/gdakram/jquery-narrative-select/tarball/master">tar</a> formats.
+      </p>
+      <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
+        by running:
+        <pre>$ git clone git://github.com/gdakram/jquery-narrative-select.git</pre>
+      </p>
+
+      <p>
+        get the source code on GitHub : <a href="http://github.com/gdakram/jquery-narrative-select">gdakram/jquery-narrative-select</a>
+      </p>      
+      
+    </div>
+  </body>
+</html>

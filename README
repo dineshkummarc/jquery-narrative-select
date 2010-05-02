@@ -1,0 +1,26 @@
+= JQuery Narrative Select Plugin
+
+http://github.com/gdakram/
+  
+= DESCRIPTION & DEMO
+
+http://gdakram.github.com/jquery-narrative-select
+
+= INTRODUCTION
+
+A JQuery tooltip plugin to make your drop-down list look and perform uniformly cross-platform. 
+
+= USAGE
+
+<!-- CSS -->
+<style type="text/css">
+  @import url("/path/to/jquery.narrativeselect/jquery.narrativeselect.css");
+</style>    
+<!-- JS -->        
+<script type="text/javascript" src="/path/to/jquery.latest.js"></script> 
+<script type="text/javascript" src="/path/to/jquery.narrativeselect.js"></script> 
+<script type="text/javascript">
+//--<![CDATA[
+  $("select").narrativeselect();
+//--]]>
+</script>

@@ -1,0 +1,84 @@
+div.narrative_select { 
+  margin: 0px 2px;
+  display: inline;
+}
+
+div.narrative_select span.text { 
+  border-bottom: 2px solid gray; 
+  cursor: pointer;
+  font-weight: bold;  
+}
+
+div#narrative_tooltip { 
+  position: absolute; 
+  display: none; 
+  top: 0px; 
+  left: 0px; 
+  width: 200px;
+  height: 200px;
+  z-index:10000;
+}
+
+div#narrative_tooltip div.narrative_content {
+  background-color: black;
+  width: 90%;
+  height: 90%;
+  position: absolute;
+  overflow-x: hidden;
+  overflow-y: auto;
+  top: 10px;
+  left: 10px;
+  padding: 5%;
+  -moz-border-radius: 0.5em; 
+  -webkit-border-radius: 0.5em;
+  -moz-box-shadow: 3px  3px 3px #666;
+  -webkit-box-shadow: 3px 3px 3px #666;
+  z-index:10000;
+}
+/* Don't know why but it needs to be here */
+div#narrative_tooltip div.narrative_content * { 
+  color: white;
+}
+
+div#narrative_tooltip div.narrative_content ul { 
+  padding: 0px;
+  margin: 0px;
+  list-style-image: url('images/bullet.png');
+  list-style-position: inside;
+}
+
+div#narrative_tooltip div.narrative_content ul span.label { 
+  font-style: italic; 
+  font-size: large;
+}
+
+div#narrative_tooltip div.narrative_content ul li { 
+  margin-bottom: 5px;
+  border-bottom: 1px dotted gray;
+  padding: 0px 16px 0px 5px;
+  cursor: pointer;
+}
+
+div#narrative_tooltip div.narrative_content ul li:hover, div#narrative_tooltip div.narrative_content ul li.current:hover { 
+  border-bottom: 1px solid gray;
+  background-color: #484848;
+}
+
+div#narrative_tooltip div.narrative_content ul li.current { 
+  background: url('images/check.png') no-repeat center right;
+}
+
+div#narrative_tooltip div.close_button { 
+  position: relative;
+  top: -5px;
+  left: -5px;
+  background: url("images/closebox.png");
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  z-index:10001;  
+}
+
+div#narrative_tooltip ul.list li {
+  color: white;  
+}
