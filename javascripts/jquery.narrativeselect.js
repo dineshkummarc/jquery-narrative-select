@@ -14,9 +14,18 @@
    $.fn.narrativeselect = function(settings) {
      // Configuration setup
      config = { 
-       'tooltip_opacity' : 0.90
+       'tooltip_opacity' : 0.90,
+       'tooltip_max_height'  : "200"
      }; 
-     if (settings) $.extend(config, settings);
+     if (typeof(settings) == "object") {
+       $.extend(config, settings);  
+     } 
+     else if (typeof(settings) == "string" && settings === "destroy") {
+       this.each(function(){
+         _remove_narrative_skin($(this));
+       });       
+       return;
+     }     
 
      /**
       * Apply interaction to all the matching elements
@@ -62,6 +71,7 @@
              });             
              html += "</ul>";
            })           
+           html = $(html);
          } 
          // standard construction
          else {
@@ -72,7 +82,7 @@
            });           
            html = $("<ul>" + html + "</ul>");           
          }         
-         narrative_tooltip.find("div.narrative_content").html(html);
+         narrative_tooltip.find("div.narrative_content").html(html);         
 
          // Add click interactions
          narrative_tooltip.find("li").bind("click", function() {
@@ -80,12 +90,17 @@
              select_elm.attr("selectedIndex", $(this).attr("index"));
              select_elm.trigger("change");             
            }
-         });         
-         //  position the tooltip
-         var tooltip_position = { left : 0, top : 0};
-         tooltip_position.left = event.clientX - (narrative_tooltip.outerWidth()/2);
-         tooltip_position.top = event.clientY - (narrative_tooltip.outerHeight()/2);
-         narrative_tooltip.css({"left" : tooltip_position.left , "top" : tooltip_position.top}).show();
+         });
+
+         //  position and show the tooltip
+         narrative_tooltip.show();
+         var tooltip_height = (html.outerHeight() < config.tooltip_max_height) ? (html.outerHeight() + 20) + "px" : config.tooltip_max_height + "px";         
+         narrative_tooltip.css({height : tooltip_height});
+         var tooltip_position = { left : 0, top : 0};                           
+         tooltip_position.left = $(event.target).offset().left+ ($(event.target).outerWidth()/2) - (narrative_tooltip.outerWidth()/2)
+         tooltip_position.top = $(event.target).offset().top - (narrative_tooltip.outerHeight()/2);
+         narrative_tooltip.css({"left" : tooltip_position.left , "top" : tooltip_position.top });
+        
          // apply animated scroll
          var pos = narrative_tooltip.find("li.current").position();
          var top = pos.top - (narrative_tooltip.outerHeight()/2);
@@ -95,6 +110,18 @@
        $("<span class='text'>" + _get_current_text(select_elm) + "</span>").appendTo(select_elm.parent());
      }
 
+     /**
+      * Removes the narrative select tooltip interaction
+      **/
+     function _remove_narrative_skin(select_elm) {
+       var $select_elm = $(select_elm);
+       if ($select_elm.closest("div.narrative_select").length > 0) {
+         var $cloned_elm = $select_elm.unbind("change").clone();         
+         $select_elm.closest("div.narrative_select").replaceWith($cloned_elm);
+         $cloned_elm.show();         
+       }
+     }
+     
      /**
       * Hides away the narrative tooltip element
       * and unbinds events inside its children
@@ -126,10 +153,11 @@
              _close_tooltip();
            }      
         }).bind("click",function(e){
-          tooltip = $("#narrative_tooltip");
-          x_range = [tooltip.offset().left, tooltip.offset().left +  tooltip.outerWidth()];
-          y_range = [tooltip.offset().top, tooltip.offset().top +  tooltip.outerHeight()];
-          if (e.clientX < x_range[0] || e.clientX > x_range[1] || e.clientY < y_range[0] || e.clientY > y_range[1]) {
+          var tooltip = $("#narrative_tooltip");
+          var x_range = [tooltip.offset().left, tooltip.offset().left +  tooltip.outerWidth()];
+          var y_range = [tooltip.offset().top, tooltip.offset().top +  tooltip.outerHeight()];
+          var target_offset = $(e.target).offset();
+          if (target_offset.left < x_range[0] || target_offset > x_range[1] || target_offset.top < y_range[0] || target_offset.top > y_range[1]) {
             _close_tooltip();
           }
         });         

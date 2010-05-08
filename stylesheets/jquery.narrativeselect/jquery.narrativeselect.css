@@ -9,6 +9,7 @@ div.narrative_select span.text {
   font-weight: bold;  
 }
 
+/** The tooltip container **/
 div#narrative_tooltip { 
   position: absolute; 
   display: none; 

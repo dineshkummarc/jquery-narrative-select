@@ -14,7 +14,7 @@
     </style>
     <link rel="stylesheet" href="stylesheets/jquery.narrativeselect/jquery.narrativeselect.css" type="text/css" />
     <script type="text/javascript" src="javascripts/jquery.min.js"></script>
-    <script type="text/javascript" src="javascripts/jquery.narrativeselect.js"></script>
+    <script type="text/javascript" src="javascripts/jquery.narrativeselect.min.js"></script>
     <script type="text/javascript">
     //--<![CDATA
       $j = jQuery.noConflict();
@@ -223,7 +223,7 @@
   &lt;/style&gt;    
   <span style='color:orange'>&lt;!-- JS --&gt;</span>
   &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.latest.js&quot;&gt;&lt;/script&gt; 
-  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.narrativeselect.js&quot;&gt;&lt;/script&gt; 
+  &lt;script type=&quot;text/javascript&quot; src=&quot;/path/to/jquery.narrativeselect.min.js&quot;&gt;&lt;/script&gt; 
   &lt;script type=&quot;text/javascript&quot;&gt;
   <span style='color:gray'>//--&lt;![CDATA[</span>
     $(&quot;select&quot;).narrativeselect();
@@ -231,11 +231,50 @@
   &lt;/script&gt;
         </pre>
       </p>
+
+      <!-- Customization -->
+      <h3>Customization</h3>
+      <ul>
+        <li>
+          <div style='color:orange'>CSS</div>
+          <p>
+            Edit <a href="stylesheets/jquery.narrativeselect/jquery.narrativeselect.css">jquery.narrativeselect.css</a> file however which you floats your boat!
+          </p>
+        </li>
+        <li>
+          <div style='color:orange'>Javascript</div>          
+          <pre>            
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  <span style='color:gray'>//--&lt;![CDATA[</span>
+    $(&quot;select&quot;).narrativeselect({
+      tooltip_opacity : 0.80, // defaults to 0.90
+      tooltip_max_height : 300, // defaults to 200, in px.
+    });
+  <span style='color:gray'>//--]]&gt;</span>  
+  &lt;/script&gt;
+          </pre>          
+        </li>
+      </ul>          
+      
+      <!-- Don't want it -->
+      <h3>Don't want it anymore? :'(</h3>
+      <p>
+        <pre>
+  <span style='color:orange'>&lt;!-- JS --&gt;</span>
+  &lt;script type=&quot;text/javascript&quot;&gt;
+  <span style='color:gray'>//--&lt;![CDATA[</span>
+    $(&quot;select&quot;).narrativeselect("destroy");
+  <span style='color:gray'>//--]]&gt;</span>  
+  &lt;/script&gt;
+        </pre>
+      </p>
+                
+      <!-- To Dos -->
       <h3 class='todo'>To Do (Current Limitations)</h3>
       <p>
         <ul>
           <li>Doesn't work with "multiple='multiple'" select elements. Yet.</li>
-          <li>No key-stroke event handler for searching through option elements.</li>
+          <li>No key-stroke event handler for searching through the "option" elements.</li>
         </ul>
       </p>
       
